@@ -48,7 +48,7 @@ type RuleOverride interface {
 // RuleContext is an interface that represents a rule context, which is a collection of rule elements.
 // It includes methods for merging two rule contexts.
 type RuleContext interface {
-	Merge(ctx RuleContext) RuleContext
+	MergeWith(ctx RuleContext) RuleContext
 
 	findElement(name string) (RuleElement, bool)
 	listElements() []RuleElement

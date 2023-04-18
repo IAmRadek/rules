@@ -31,9 +31,9 @@ func (r *ruleContext) listElements() []RuleElement {
 	return *r
 }
 
-// Merge combines two contexts into a new context. If an element with the same
+// MergeWith combines two contexts into a new context. If an element with the same
 // name exists in both contexts, the element from the first context is used.
-func (r *ruleContext) Merge(ctx RuleContext) RuleContext {
+func (r *ruleContext) MergeWith(ctx RuleContext) RuleContext {
 	newCtx := ruleContext{}
 	newCtx = append(newCtx, *r...)
 	for _, elem := range ctx.listElements() {

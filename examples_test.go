@@ -61,7 +61,7 @@ func ExampleNewContext() {
 		isPassengerDressSmart(true),
 		baggageWeight(4.6),
 		baggageAllowance(7),
-	).Merge(globalContext)
+	).MergeWith(globalContext)
 
 	fmt.Println(passengerContext)
 
