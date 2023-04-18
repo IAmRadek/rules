@@ -99,5 +99,5 @@ ruleSet.AddOverride(rule1)
 ### Contributing
 
 If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a
-pull request on GitHub at https://github.com/IAmRadek/rules.
+pull request on GitHub at https://github.com/IAmRadek/rules/issues.
 
