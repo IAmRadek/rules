@@ -32,11 +32,6 @@ func FuzzParse(f *testing.F) {
 		}
 		s1 := fmt.Sprint(r1)
 
-		fmt.Println("---")
-		fmt.Println(b)
-		fmt.Println(s1)
-		fmt.Println("---")
-
 		r2, err := Parse("rule", s1)
 		if err != nil {
 			t.Fatalf("unexpected error: %v", err)
