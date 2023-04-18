@@ -67,9 +67,7 @@ attributes as arguments.
 
 ```go 
 globalContext := rules.NewContext(var1(10), var2("global"), attr1(true))
-userContext := rules.NewContext(var1(12), var2("user"))
-
-ruleContext := globalContext.Merge(userContext)
+userContext := rules.NewContext(var1(12), var2("user")).Merge(globalContext)
 ```
 
 You can also merge multiple `RuleContext` instances together using the `Merge` method to update the values of
