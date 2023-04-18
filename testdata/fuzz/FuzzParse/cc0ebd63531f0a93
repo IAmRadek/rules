@@ -1,0 +1,2 @@
+go test fuzz v1
+string("AND AND (0)(0 0)")
