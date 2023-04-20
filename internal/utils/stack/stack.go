@@ -35,22 +35,6 @@ func (s *Stack[T]) Peek() (T, bool) {
 	return s.data[s.size-1], true
 }
 
-// PushFront a new value onto the front of the stack
-func (s *Stack[T]) PushFront(str T) {
-	if s.size == len(s.data) {
-		// If the underlying slice is full, double its capacity.
-		newCap := 2 * s.size
-		if newCap == 0 {
-			newCap = 8 // Start with a small capacity.
-		}
-		newData := make([]T, newCap)
-		copy(newData, s.data)
-		s.data = newData
-	}
-	s.data = append([]T{str}, s.data...)
-	s.size++
-}
-
 // Pop and return top element of stack. Return false if stack is empty.
 func (s *Stack[T]) Pop() (T, bool) {
 	if s.IsEmpty() {
@@ -62,9 +46,9 @@ func (s *Stack[T]) Pop() (T, bool) {
 }
 
 func (s *Stack[T]) MustPop() T {
-	if s.IsEmpty() {
+	v, ok := s.Pop()
+	if !ok {
 		panic("stack is empty")
 	}
-	s.size--
-	return s.data[s.size]
+	return v
 }
